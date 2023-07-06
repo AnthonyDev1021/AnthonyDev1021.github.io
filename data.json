@@ -1,4 +1,8 @@
-[
+{   "config":{
+        "author_name":"Anthony Thorpe - Full Stact Web Developer"
+    },
+    "follio_list":  
+    [
     {
         "img": "https://futureprofilez.com/wp-content/uploads/2022/09/screenshot-internetaccess4u.com-2022.09.08-14_57_32.png",
         "title": "Internetaccess4u",
@@ -567,4 +571,4 @@
         "url": "https://laybyshop.com/",
         "category": 6
     }
-]
+]}

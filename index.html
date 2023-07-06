@@ -485,6 +485,13 @@
                 color: #fff;
                 border-color: #333;
             }
+
+            .top-header .contact-links {
+                display: flex;
+                margin-left: auto;
+                justify-content: center;
+                align-items: center;
+            }
         </style>
     </head>
     <body class="page-template page-template-template2 page-template-template-portfolio page-template-template2template-portfolio-php page page-id-15917">
@@ -493,8 +500,7 @@
                 <section class="top-header">
                     <div class="container">
                         <div class="contact-links" style = "min-height:30px;">
-                            <ul>
-                            </ul>
+                            <span id = "author_title"> </span>
                         </div>
                     </div>
                 </section>
@@ -661,10 +667,13 @@
             var json_category_data = [];
             var page_count = 10;
             var cur_page = 0;
+            var config_info;
             $.getJSON("data.json", function(json) {
-                json_data = json;
+                json_data = json['follio_list'];
+                config_info = json['config'];
                 initData();
                 getPage(0);
+                $("#author_title").text(config_info['author_name']);
             });
 
             $(function(){
@@ -736,7 +745,7 @@
                 var tags_a = info.tags.split(",");
                 for(var i = 0; i < tags_a.length ; i++){
                     html += ` 
-                                        <li>Wordpress</li>
+                                        <li>${tags_a[i]}</li>
                         `;
                 }
                 html += `                
