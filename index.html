@@ -487,20 +487,37 @@
             }
 
             .top-header .contact-links {
-                display: flex;
+                display: block !important;
                 margin-left: auto;
                 justify-content: center;
                 align-items: center;
+                font-size:60px;
             }
+
+            #author_name{
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+
+            #role_name{
+                display: block;
+                width: 100%;
+                text-align: right;
+            }
+
         </style>
     </head>
     <body class="page-template page-template-template2 page-template-template-portfolio page-template-template2template-portfolio-php page page-id-15917">
-        <div class="headerouter" style = "height:30px;">
+        <div class="headerouter" style = "height:180px;">
             <header>
                 <section class="top-header">
                     <div class="container">
-                        <div class="contact-links" style = "min-height:30px;">
-                            <span id = "author_title"> </span>
+                        <div class="contact-links" style = "min-height:180px;">
+                            <div id = "author_name"></div>  
+                            <div id = "role_name"></div>  
+                            
+                            
                         </div>
                     </div>
                 </section>
@@ -673,7 +690,8 @@
                 config_info = json['config'];
                 initData();
                 getPage(0);
-                $("#author_title").text(config_info['author_name']);
+                $("#author_name").text(config_info['author_name']);
+                $("#role_name").text(config_info['role_name']);
             });
 
             $(function(){
